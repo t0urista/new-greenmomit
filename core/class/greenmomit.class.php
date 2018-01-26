@@ -144,6 +144,7 @@ class greenmomit extends eqLogic {
 				$temperature->setName(__('Température', __FILE__));
 				$temperature->setTemplate('dashboard', 'tile');
 			}
+		$temperature->setDisplay('generic_type', 'THERMOSTAT_TEMPERATURE');
 			$temperature->setUnite('°C');
 			$temperature->setType('info');
 			$temperature->setSubType('numeric');
@@ -154,8 +155,9 @@ class greenmomit extends eqLogic {
 			if (!is_object($humidity)) {
 				$humidity = new greenmomitCmd();
 				$humidity->setLogicalId('humidity');
-				$humidity->setIsVisible(0);
+				$humidity->setIsVisible(1);
 				$humidity->setName(__('Humidité', __FILE__));
+				$humidity->setTemplate('dashboard', 'tile');
 			}
 			$humidity->setType('info');
 			$humidity->setSubType('numeric');
@@ -169,7 +171,9 @@ class greenmomit extends eqLogic {
 				$order->setLogicalId('order');
 				$order->setIsVisible(0);
 				$order->setName(__('Ordre', __FILE__));
+				$order->setTemplate('dashboard', 'tile');
 			}
+			$order->setDisplay('generic_type', 'THERMOSTAT_SETPOINT');
 			$order->setType('info');
 			$order->setSubType('numeric');
 			$order->setEqLogic_id($eqLogic->getId());
@@ -182,9 +186,10 @@ class greenmomit extends eqLogic {
 				$thermostat->setLogicalId('thermostat');
 				$thermostat->setIsVisible(1);
 				$thermostat->setName(__('Thermostat', __FILE__));
-				$thermostat->setTemplate('dashboard', 'button');
-				$thermostat->setTemplate('mobile', 'button');
+				$thermostat->setTemplate('dashboard', 'thermostat');	 
+				$thermostat->setTemplate('mobile', 'thermostat');
 			}
+			$thermostat->setDisplay('generic_type', 'THERMOSTAT_SET_SETPOINT');
 			$thermostat->setValue($order->getId());
 			$thermostat->setType('action');
 			$thermostat->setSubType('slider');
@@ -210,8 +215,9 @@ class greenmomit extends eqLogic {
 			if (!is_object($state)) {
 				$state = new greenmomitCmd();
 				$state->setLogicalId('state');
-				$state->setIsVisible(0);
+				$state->setIsVisible(1);
 				$state->setName(__('Etat', __FILE__));
+				$state->setTemplate('dashboard', 'tile');
 			}
 			$state->setType('info');
 			$state->setSubType('numeric');
@@ -222,8 +228,9 @@ class greenmomit extends eqLogic {
 			if (!is_object($controlRelay)) {
 				$controlRelay = new greenmomitCmd();
 				$controlRelay->setLogicalId('controlRelay');
-				$controlRelay->setName(__('Relai controlé par', __FILE__));
+				$controlRelay->setName(__('Relais controlé par', __FILE__));
 				$controlRelay->setIsVisible(0);
+				$controlRelay->setTemplate('dashboard', 'tile');
 			}
 			$controlRelay->setType('info');
 			$controlRelay->setSubType('numeric');
@@ -234,10 +241,11 @@ class greenmomit extends eqLogic {
 			if (!is_object($relay)) {
 				$relay = new greenmomitCmd();
 				$relay->setLogicalId('relay');
-				$relay->setName(__('Relai', __FILE__));
+				$relay->setName(__('Relais', __FILE__));
 				$relay->setIsVisible(1);
 				$relay->setTemplate('dashboard', 'heat');
 			}
+			$relay->setDisplay('generic_type', 'THERMOSTAT_STATE');   
 			$relay->setType('info');
 			$relay->setSubType('binary');
 			$relay->setEqLogic_id($eqLogic->getId());
@@ -248,7 +256,7 @@ class greenmomit extends eqLogic {
 				$standby = new greenmomitCmd();
 				$standby->setLogicalId('standby');
 				$standby->setIsVisible(0);
-				$standby->setName(__('Vacance', __FILE__));
+				$standby->setName(__('Vacances', __FILE__));
 			}
 			$standby->setType('info');
 			$standby->setSubType('binary');
@@ -395,29 +403,202 @@ class greenmomit extends eqLogic {
 			$ambient_off->setEqLogic_id($eqLogic->getId());
 			$ambient_off->save();
 
+		$state_off = $eqLogic->getCmd(null, 'state_off');
+			if (!is_object($state_off)) {
+				$state_off = new greenmomitCmd();
+				$state_off->setLogicalId('state_off');
+				$state_off->setIsVisible(0);
+				$state_off->setName(__('Etat Off', __FILE__));
+			}
+			$state_off->setType('info');
+			$state_off->setSubType('binary');
+			$state_off->setEqLogic_id($eqLogic->getId());
+			$state_off->save();
+
+
+			$state_manuel = $eqLogic->getCmd(null, 'state_manuel');
+			if (!is_object($state_manuel)) {
+				$state_manuel = new greenmomitCmd();
+				$state_manuel->setLogicalId('state_manuel');
+				$state_manuel->setIsVisible(0);
+				$state_manuel->setName(__('Etat Manuel', __FILE__));
+			}
+			$state_manuel->setType('info');
+			$state_manuel->setSubType('binary');
+			$state_manuel->setEqLogic_id($eqLogic->getId());
+			$state_manuel->save();
+
+			$state_auto = $eqLogic->getCmd(null, 'state_auto');
+			if (!is_object($state_auto)) {
+				$state_auto = new greenmomitCmd();
+				$state_auto->setLogicalId('state_auto');
+				$state_auto->setIsVisible(0);
+				$state_auto->setName(__('Etat Auto', __FILE__));
+			}
+			$state_auto->setType('info');
+			$state_auto->setSubType('binary');
+			$state_auto->setEqLogic_id($eqLogic->getId());
+			$state_auto->save();
+
+
+			$off = $eqLogic->getCmd(null, 'off');
+			if (!is_object($off)) {
+				$off = new greenmomitCmd();
+				$off->setLogicalId('off');
+				$off->setIsVisible(1);
+				$off->setName(__('Off', __FILE__));
+			}
+			$off->setDisplay('generic_type', 'THERMOSTAT_SET_MODE');
+			$off->setValue($state_off->getId());
+			$off->setType('action');
+			$off->setSubType('other');
+			$off->setEqLogic_id($eqLogic->getId());
+			$off->save();
+
+
 			$manuel = $eqLogic->getCmd(null, 'manuel');
 			if (!is_object($manuel)) {
 				$manuel = new greenmomitCmd();
 				$manuel->setLogicalId('manuel');
-				$manuel->setIsVisible(0);
+				$manuel->setIsVisible(1);		 
 				$manuel->setName(__('Manuel', __FILE__));
 			}
-			$manuel->setType('action');
+			$manuel->setDisplay('generic_type', 'THERMOSTAT_SET_MODE');			
+			$manuel->setValue($state_manuel->getId());					 
+			$manuel->setType('action');								
 			$manuel->setSubType('other');
 			$manuel->setEqLogic_id($eqLogic->getId());
 			$manuel->save();
 
-			$automatic = $eqLogic->getCmd(null, 'automatic');
-			if (!is_object($automatic)) {
-				$automatic = new greenmomitCmd();
-				$automatic->setLogicalId('automatic');
-				$automatic->setIsVisible(0);
-				$automatic->setName(__('Automatique', __FILE__));
+
+			$auto = $eqLogic->getCmd(null, 'auto');
+			if (!is_object($auto)) {
+				$auto = new greenmomitCmd();
+				$auto->setLogicalId('auto');
+				$auto->setIsVisible(1);							
+				$auto->setName(__('Auto', __FILE__));					
 			}
-			$automatic->setType('action');
-			$automatic->setSubType('other');
-			$automatic->setEqLogic_id($eqLogic->getId());
-			$automatic->save();
+			$auto->setDisplay('generic_type', 'THERMOSTAT_SET_MODE');			
+			$auto->setValue($state_auto->getId());										 
+			$auto->setType('action');
+			$auto->setSubType('other');
+			$auto->setEqLogic_id($eqLogic->getId());
+			$auto->save();
+
+
+			$calibration = $eqLogic->getCmd(null, 'calibration');
+			if (!is_object($calibration)) {
+				$calibration = new greenmomitCmd();
+				$calibration->setLogicalId('calibration');
+				$calibration->setIsVisible(0);
+				$calibration->setName(__('Calibration', __FILE__));
+				$calibration->setTemplate('dashboard', 'tile');
+			}
+			$calibration->setType('info');
+			$calibration->setSubType('numeric');
+			$calibration->setUnite('°C');
+			$calibration->setEqLogic_id($eqLogic->getId());
+			$calibration->save();
+
+
+			$histeresis = $eqLogic->getCmd(null, 'histeresis');
+			if (!is_object($histeresis)) {
+				$histeresis = new greenmomitCmd();
+				$histeresis->setLogicalId('histeresis');
+				$histeresis->setIsVisible(0);
+				$histeresis->setName(__('Hysteresis', __FILE__));
+				$histeresis->setTemplate('dashboard', 'tile');
+			}
+			$histeresis->setType('info');
+			$histeresis->setSubType('numeric');
+			$histeresis->setUnite('°C');
+			$histeresis->setEqLogic_id($eqLogic->getId());
+			$histeresis->save();
+
+
+			$minTemperatureHeat = $eqLogic->getCmd(null, 'minTemperatureHeat');
+			if (!is_object($minTemperatureHeat)) {
+				$minTemperatureHeat = new greenmomitCmd();
+				$minTemperatureHeat->setLogicalId('minTemperatureHeat');
+				$minTemperatureHeat->setIsVisible(0);
+				$minTemperatureHeat->setName(__('Temperature Minimale', __FILE__));
+				$minTemperatureHeat->setTemplate('dashboard', 'tile');
+			}
+			$minTemperatureHeat->setType('info');
+			$minTemperatureHeat->setSubType('numeric');
+			$minTemperatureHeat->setUnite('°C');
+			$minTemperatureHeat->setEqLogic_id($eqLogic->getId());
+			$minTemperatureHeat->save();
+
+			$maxTemperatureHeat = $eqLogic->getCmd(null, 'maxTemperatureHeat');
+			if (!is_object($maxTemperatureHeat)) {
+				$maxTemperatureHeat = new greenmomitCmd();
+				$maxTemperatureHeat->setLogicalId('maxTemperatureHeat');
+				$maxTemperatureHeat->setIsVisible(0);
+				$maxTemperatureHeat->setName(__('Temperature Maximale', __FILE__));
+				$maxTemperatureHeat->setTemplate('dashboard', 'tile');
+			}
+			$maxTemperatureHeat->setType('info');
+			$maxTemperatureHeat->setSubType('numeric');
+			$maxTemperatureHeat->setUnite('°C');
+			$maxTemperatureHeat->setEqLogic_id($eqLogic->getId());
+			$maxTemperatureHeat->save();
+
+			$design = $eqLogic->getCmd(null, 'design');
+			if (!is_object($design)) {
+				$design = new greenmomitCmd();
+				$design->setLogicalId('design');
+				$design->setIsVisible(0);
+				$design->setName(__('Design', __FILE__));
+				$design->setTemplate('dashboard', 'tile');
+			}
+			$design->setType('info');
+			$design->setSubType('numeric');
+			$design->setEqLogic_id($eqLogic->getId());
+			$design->save();
+
+			$state_text = $eqLogic->getCmd(null, 'state_text');
+			if (!is_object($state_text)) {
+				$state_text= new greenmomitCmd();
+				$state_text->setLogicalId('state_text');
+				$state_text->setIsVisible(0);
+				$state_text->setName(__('Etat Label', __FILE__));
+				$state_text->setTemplate('dashboard', 'tile');
+			}
+			$state_text->setDisplay('generic_type', 'THERMOSTAT_MODE');	
+			$state_text->setType('info');
+			$state_text->setSubType('string');
+			$state_text->setEqLogic_id($eqLogic->getId());
+			$state_text->save();
+
+
+			$controlRelay_text = $eqLogic->getCmd(null, 'controlRelay_text');
+			if (!is_object($controlRelay_text)) {
+				$controlRelay_text= new greenmomitCmd();
+				$controlRelay_text->setLogicalId('controlRelay_text');
+				$controlRelay_text->setIsVisible(0);
+				$controlRelay_text->setName(__('Relais controlé par text ', __FILE__));
+				$controlRelay_text->setTemplate('dashboard', 'tile');
+			}
+			$controlRelay_text->setType('info');
+			$controlRelay_text->setSubType('string');
+			$controlRelay_text->setEqLogic_id($eqLogic->getId());
+			$controlRelay_text->save();
+
+
+			$status = $eqLogic->getCmd(null, 'status');
+			if (!is_object($status)) {
+				$status= new greenmomitCmd();
+				$status->setLogicalId('status');
+				$status->setIsVisible(0);
+				$status->setName(__('Status', __FILE__));
+				$status->setTemplate('dashboard', 'tile');
+			}
+			$status->setDisplay('generic_type', 'THERMOSTAT_STATE_NAME');
+			$status->setType('info');
+			$status->setSubType('string');
+			$status->setEqLogic_id($eqLogic->getId());
+			$status->save();
 		}
 	}
 
@@ -440,7 +621,7 @@ class greenmomit extends eqLogic {
 			return;
 		}
 		if (!isset($data['parameters']['temperature'])) {
-			$data['parameters']['temperature'] = $data['parameters']['pastTemperature'];
+			$data['parameters']['temperature'] = $data['parameters']['minTemperatureHeat'];		
 		}
 		if ($data['parameters']['smart'] == '') {
 			$data['parameters']['smart'] = 0;
@@ -462,7 +643,94 @@ class greenmomit extends eqLogic {
 		$this->checkAndUpdateCmd('smart', $data['parameters']['smart']);
 		$this->checkAndUpdateCmd('presence', $data['parameters']['presence']);
 		$this->checkAndUpdateCmd('ambient', $data['parameters']['ambient']);
+		$this->checkAndUpdateCmd('calibration', $data['parameters']['calibration']);
+		$this->checkAndUpdateCmd('histeresis', $data['parameters']['histeresis']);
+		$this->checkAndUpdateCmd('minTemperatureHeat', $data['parameters']['minTemperatureHeat']);
+		$this->checkAndUpdateCmd('maxTemperatureHeat', $data['parameters']['maxTemperatureHeat']);
+		$this->checkAndUpdateCmd('design', $data['parameters']['design']);
+
+		if ($data['record']['relays'] == '1') {
+			$this->checkAndUpdateCmd('status', 'Actif');
+		}
+		else {
+			$this->checkAndUpdateCmd('status', 'Inactif');
+		}
+
+		switch($data['parameters']['state'])  {
+  		    case '0':
+ 			$this->checkAndUpdateCmd('state_text', $this->getCmd('action', 'off')->getName());
+			$this->checkAndUpdateCmd('state_off', 1);
+			$this->checkAndUpdateCmd('state_manuel', 0);
+			$this->checkAndUpdateCmd('state_auto', 0);
+  			break;
+
+  		    case '1':
+			$this->checkAndUpdateCmd('state_text', $this->getCmd('action', 'manuel')->getName());
+			$this->checkAndUpdateCmd('state_off', 0);
+			$this->checkAndUpdateCmd('state_manuel', 1);
+			$this->checkAndUpdateCmd('state_auto', 0);
+  			break;
+	
+		    case '2':
+			$this->checkAndUpdateCmd('state_text', $this->getCmd('action', 'auto')->getName());
+			$this->checkAndUpdateCmd('state_off', 0);
+			$this->checkAndUpdateCmd('state_manuel', 0);
+			$this->checkAndUpdateCmd('state_auto', 1);
+  			break;
+
+		    default:
+			$this->checkAndUpdateCmd('state_text', 'Inconnu');
+			$this->checkAndUpdateCmd('state_off', 0);
+			$this->checkAndUpdateCmd('state_manuel', 0);
+			$this->checkAndUpdateCmd('state_auto', 0);
+  			break;
+		}
+
+		switch($data['parameters']['controlRelay']) {
+  	    	    case '1':
+ 			$this->checkAndUpdateCmd('controlRelay_text', 'Antigel');    
+  			break;
+	
+  		    case '2':
+ 			$this->checkAndUpdateCmd('controlRelay_text', 'Vacances');
+  			break;
+	
+		    case '3':
+ 			$this->checkAndUpdateCmd('controlRelay_text', 'Manuel');
+  			break;
+	
+		    case '4':
+ 			$this->checkAndUpdateCmd('controlRelay_text', 'Presence');
+  			break;
+	
+		    case '5':
+ 			$this->checkAndUpdateCmd('controlRelay_text', 'Ambiance');
+  			break;
+
+		    case '6':
+ 			$this->checkAndUpdateCmd('controlRelay_text', 'Calendrier');
+  			break;
+
+		    default: 
+			$this->checkAndUpdateCmd('controlRelay_text', 'Indefini');
+		}
+
+				
+		$_logicalId = 'thermostat';
+		if (is_object($_logicalId)) {
+			$thermostat= $_logicalId;
+		} else {
+			$thermostat= $this->getCmd(null, $_logicalId);
+		}
+		if (is_object($thermostat)) {
+			$thermostat->setConfiguration('minValue',  $data['parameters']['minTemperatureHeat']);
+			$thermostat->setConfiguration('maxValue',  $data['parameters']['maxTemperatureHeat']);
+			$thermostat->save();
+			
+		}
+	
 	}
+
 
 	/*     * **********************Getteur Setteur*************************** */
 }
@@ -484,10 +752,15 @@ class greenmomitCmd extends cmd {
 			'type' => $type,
 			'params' => array(),
 		);
+		$parameterlist =  $eqLogic->getCmd('action', 'off')->getName();  				
+		$parameterlist =  $parameterlist  .  ','  .  $eqLogic->getCmd('action', 'manuel')->getName(); 		 
+		$parameterlist =  $parameterlist  .  ','  .  $eqLogic->getCmd('action', 'auto')->getName();		 
 		$info_device['params'] = $ISSStructure[$info_device['type']]['params'];
+		$info_device['params'][0]['value'] = '#' . $eqLogic->getCmd('info', 'state_text')->getId() . '#';  	
 		$info_device['params'][1]['value'] = '#' . $eqLogic->getCmd('info', 'temperature')->getId() . '#';
 		$info_device['params'][2]['value'] = '#' . $eqLogic->getCmd('info', 'order')->getId() . '#';
 		$info_device['params'][3]['value'] = 1;
+		$info_device['params'][4]['value'] = $parameterlist;   								
 		return $info_device;
 	}
 
@@ -497,6 +770,20 @@ class greenmomitCmd extends cmd {
 			$cmd = $eqLogic->getCmd('action', 'thermostat');
 			if (is_object($cmd)) {
 				$cmd->execCmd(array('slider' => $_value));
+			}
+		}
+		if ($_action == 'setMode') {
+			if ($_value == $eqLogic->getCmd('action', 'off')->getName()) {
+				$cmd = $eqLogic->getCmd('action', 'off');
+			}
+			if ($_value == $eqLogic->getCmd('action', 'manuel')->getName()) {
+				$cmd = $eqLogic->getCmd('action', 'manuel');
+			}
+			if ($_value == $eqLogic->getCmd('action', 'auto')->getName()) {
+				$cmd = $eqLogic->getCmd('action', 'auto');
+			}
+			if (is_object($cmd)) {
+				$cmd->execCmd(array());
 			}
 		}
 	}
@@ -615,6 +902,17 @@ class greenmomitCmd extends cmd {
 			$request_http->exec(4, 2);
 		}
 
+		if ($this->getLogicalId() == 'off') {
+			$request_http = new com_http($url . '&values=state&state=0');
+			$request_http->setPut(
+				array(
+					'values' => 'state',
+					'state' => '0',
+				)
+			);
+			$request_http->exec(4, 2);
+		}
+
 		if ($this->getLogicalId() == 'manuel') {
 			$request_http = new com_http($url . '&values=state&state=1');
 			$request_http->setPut(
@@ -626,7 +924,7 @@ class greenmomitCmd extends cmd {
 			$request_http->exec(4, 2);
 		}
 
-		if ($this->getLogicalId() == 'automatic') {
+		if ($this->getLogicalId() == 'auto') {
 			$request_http = new com_http($url . '&values=state&state=2');
 			$request_http->setPut(
 				array(
