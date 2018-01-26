@@ -1,0 +1,48 @@
+{
+    "plugins/greenmomit/plugin_info/configuration.php": {
+        "Nom d'utilisateur": "Nombre de usuario",
+        "Mot de passe": "Contraseña",
+        "Identifiant unique api": "Identificador único API ",
+        "Code secret API": "Código secreto API",
+        "Synchroniser": "Sincronizar",
+        "Synchroniser mes équipements": "Sincronización de mis dispositivos",
+        "Synchronisation réussie": "Sincronización exitosa"
+    },
+    "plugins/greenmomit/desktop/php/greenmomit.php": {
+        "Ajouter une météo": "Añadir el tiempo",
+        "Rechercher": "Buscar",
+        "Mes thermostats Greenmomit": "Mis termostatos Greenmomit",
+        "Général": "Général",
+        "Nom de l'équipement template": "Nombre del dispositivo plantilla",
+        "Objet parent": "Objeto padre",
+        "Aucun": "Ningún",
+        "Activer": "Activar",
+        "Visible": "Visible",
+        "Le controle du thermostat n'est pas fait par Jeedom": "El control del termostato no lo realiza Jeedom",
+        "Commande": "Comando",
+        "Nom": "Nombre",
+        "Type": "Tipo",
+        "Action": "Acción",
+        "Supprimer": "Borrar",
+        "Sauvegarder": "Guardar",
+        "Option": "Opción",
+        "Equipement": "Dispositivos",
+        "Commandes": "Órdenes",
+        "Configuration avancée": "Configuración avanzada"
+    },
+    "plugins/greenmomit/desktop/js/greenmomit.js": {
+        "Nom": "Nombre",
+        "Historiser": "Guardar historial",
+        "Tester": "Probar"
+    },
+    "plugins/greenmomit/plugin_info/info.xml": {
+        "Plugin pour les thermostats Greenmomit": "Plugin para los termostatos Greenmomit",
+        "Aucune": "Ninguna"
+    },
+    "plugins/greenmomit/core/class/greenmomit.class.php": {
+        "Erreur sur ": "Error en"
+    },
+    "plugins/greenmomit/plugin_info/info.json": {
+        "Plugin pour les thermostats Greenmomit": "Plugin para los termostatos Greenmomit"
+    }
+}

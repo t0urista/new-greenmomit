@@ -1,0 +1,48 @@
+{
+    "plugins/greenmomit/plugin_info/configuration.php": {
+        "Nom d'utilisateur": "Nama pemakai",
+        "Mot de passe": "Password",
+        "Identifiant unique api": "Identifiant unique api",
+        "Code secret API": "Code secret API",
+        "Synchroniser": "Menyinkronkan",
+        "Synchroniser mes équipements": "Sinkronisasi Koubachi sensor saya",
+        "Synchronisation réussie": "Sinkronisasi berhasil"
+    },
+    "plugins/greenmomit/desktop/php/greenmomit.php": {
+        "Ajouter une météo": "Ajouter une météo",
+        "Rechercher": "Mencari",
+        "Mes thermostats Greenmomit": "Mes thermostats Greenmomit",
+        "Général": "Umum",
+        "Nom de l'équipement template": "Nama peralatan contoh",
+        "Objet parent": "Objek induk",
+        "Aucun": "Tak ada",
+        "Activer": "Mengaktifkan",
+        "Visible": "Terlihat",
+        "Le controle du thermostat n'est pas fait par Jeedom": "Le controle du thermostat n'est pas fait par Jeedom",
+        "Commande": "Pesanan",
+        "Nom": "Nama",
+        "Type": "Jenis",
+        "Action": "Tindakan",
+        "Supprimer": "Menghapus",
+        "Sauvegarder": "Menyimpan",
+        "Option": "Pilihan",
+        "Equipement": "Peralatan",
+        "Commandes": "Perintah",
+        "Configuration avancée": "Configuration avancée"
+    },
+    "plugins/greenmomit/desktop/js/greenmomit.js": {
+        "Nom": "Nama",
+        "Historiser": "Historicize",
+        "Tester": "Coba"
+    },
+    "plugins/greenmomit/plugin_info/info.xml": {
+        "Plugin pour les thermostats Greenmomit": "Plugin pour les thermostats Greenmomit",
+        "Aucune": "Tak ada"
+    },
+    "plugins/greenmomit/core/class/greenmomit.class.php": {
+        "Erreur sur ": "Error"
+    },
+    "plugins/greenmomit/plugin_info/info.json": {
+        "Plugin pour les thermostats Greenmomit": "Plugin pour les thermostats Greenmomit"
+    }
+}

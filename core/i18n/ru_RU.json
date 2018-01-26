@@ -1,0 +1,48 @@
+{
+    "plugins/greenmomit/plugin_info/configuration.php": {
+        "Nom d'utilisateur": "Имя пользователя",
+        "Mot de passe": "Пароль",
+        "Identifiant unique api": "Уникальный API идентификатор",
+        "Code secret API": "API секретный код",
+        "Synchroniser": "Синхронизировать",
+        "Synchroniser mes équipements": "Синхронизировать мое оборудование",
+        "Synchronisation réussie": "Успешная синхронизация"
+    },
+    "plugins/greenmomit/desktop/php/greenmomit.php": {
+        "Ajouter une météo": "Добавить Погоду",
+        "Rechercher": "Искать",
+        "Mes thermostats Greenmomit": "Мои термостаты Greenmomit",
+        "Général": "Главная",
+        "Nom de l'équipement template": "Название шаблона оборудования",
+        "Objet parent": "Родительсикй объект",
+        "Aucun": "Нет",
+        "Activer": "Активировать",
+        "Visible": "Видимый",
+        "Le controle du thermostat n'est pas fait par Jeedom": "Управление термостатом не поддерживается Jeedom",
+        "Commande": "Команда",
+        "Nom": "Имя",
+        "Type": "Тип",
+        "Action": "Действие",
+        "Supprimer": "Удалить",
+        "Sauvegarder": "Сохранить",
+        "Option": "Опция",
+        "Equipement": "Оборудование",
+        "Commandes": "Команды",
+        "Configuration avancée": "Расширенные настройки"
+    },
+    "plugins/greenmomit/desktop/js/greenmomit.js": {
+        "Nom": "Имя",
+        "Historiser": "История",
+        "Tester": "Тест"
+    },
+    "plugins/greenmomit/plugin_info/info.xml": {
+        "Plugin pour les thermostats Greenmomit": "Плагин для термостатов Greenmomit ",
+        "Aucune": "Нет"
+    },
+    "plugins/greenmomit/core/class/greenmomit.class.php": {
+        "Erreur sur ": "Ошибка"
+    },
+    "plugins/greenmomit/plugin_info/info.json": {
+        "Plugin pour les thermostats Greenmomit": "Плагин для термостатов Greenmomit "
+    }
+}

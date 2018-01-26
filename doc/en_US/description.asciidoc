@@ -1,0 +1,70 @@
+
+==== Description marketing :)
+
+[role="col-md-12 text-justify"]
+--
+Le thermostat intelligent Momit ST permet de gérer le confort de votre maison, peu importe où que vous soyez, à partir d´un smartphone, d´une tablette ou d´un ordinateur, tout en vous aidant à réduire votre facture d´énergie de 20 %.
+--
+image:../images/greenmomit.jpg[width=400,role="img-thumbnail"]
+--
+Alimenté sur secteur, le thermostat se connecte à la chaudière via un contact inverseur sans potentiel. Connecté au réseau WiFi de votre domicile, vous pouvez accéder à votre système de chauffage à partir de n´importe quel ordinateur, smartphone ou tablette.
+Le thermostat intelligent Momit ST se démarque de ses concurrents en offrant différentes fonctionnalités innovantes :
+
+* Moniteur
+** Sauvegarde toutes vos données de consommation énergétique.
+* Calendrier
+** Vous permet de régler votre thermostat facilement.
+* Présence
+** Possède un capteur qui réduit la consommation excessive d´énergie lorsque vous êtes absent. Le chauffage peut même être automatiquement éteint.
+* Contrôle
+** Permet de gérer le confort de votre logement depuis n´importe où et à tout moment à partir de votre smartphone, tablette ou PC.
+* Temps
+** Estime le temps moyen que chaque logement met pour atteindre la température indiquée en optimisant la période d´anticipation nécessaire pour atteindre la bonne température.
+* Economies
+** Un indicateur visuel s´affiche lorsque des économies sont faites.
+* Vacances
+** Pendant la période de vacances le thermostat intelligent Momit met en pause l´apprentissage.
+** A la différence des thermostats traditionnels, le thermostat intelligent Momit ST a un design élégant et innovant qui vous permettra de l´intégrer dans votre décor harmonieusement. Avec une finition en verre et un écran tactile, il offre les designs suivants :
+** Avec une application gratuite (iOS et Android), votre Smartphone et une simple connexion Internet, vous pouvez accéder à toutes les fonctionnalités du thermostat intelligent Momit ST en temps réel, depuis n´importe où.
+--
+*FONCTIONS*
+--
+* Thermostat IP WiFi
+* Programmable et commandable à distance
+* Compatible avec les systèmes de chaudières conventionnels ou combinés
+* Remplace tout thermostat standard à contact sec (Relais)
+* Écran tactile capacitif
+* Différents capteurs intégrés (température, humidité, luminosité, proximité)
+* Programmation d´un calendrier
+* Fonction Vacances
+* Design élégant et innovant
+* Finition en verre
+* Différents design d´affichage disponibles
+* Application iPhone gratuite
+* Application Android gratuite
+* API disponible sur simple demande au Support Green Momit
+--
+*CARACTERISTIQUES TECHNIQUES*
+--
+* Alimentation : 230 V AC 50..60 Hz
+* Sortie : Sans potentiel
+* Puissance maximum :
+** 5 A pour une charge résistive
+** 2 A pour une charge inductive (cosÎ† = 0.4)
+* WiFi : IEEE 802.11 b/g
+* Capteurs :
+** Ecran tactile capacitif
+** Capteur de température NTC 100k @ 25°C
+** Capteur d´humidité 0-99%
+** Capteur de luminosité
+** Capteur de proximité jusqu´à 5 m
+* Protection IP : IP20
+* Dimensions : 94 x 94 x 32 mm
+* Poids : 225g
+* Normes :
+** ETSI EN 300 328 V1.7.1 (2006-10)
+** ETSI-EN 301 489-1 V1.9.2 (2011-09)
+** ETSI EN 301 489-17 V2.2.1 (2012-09)
+** EN 62479:2010
+** EN 60730-2-9; EN 60730-1
+--

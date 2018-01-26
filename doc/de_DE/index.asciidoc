@@ -1,0 +1,18 @@
+:icons:
+
+== Greenmomit
+Plugin permettant de communiquer et contrôler son thermostat Green Momit
+image::../images/greenmomit_icon.png[]
+
+{nbsp} +
+
+=== Beschreibung
+include::description.asciidoc[]
+
+'''
+=== Konfiguration
+include::configuration.asciidoc[]
+
+'''
+
+include::changelog.asciidoc[]

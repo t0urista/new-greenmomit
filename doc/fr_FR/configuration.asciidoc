@@ -1,0 +1,183 @@
+:imagesdir: ../images
+==== Installer le plugin
+
+[role="col-md-12 text-justify"]
+--
+Procéder à l'installation du plugin
+--
+
+[role="row"]
+{nbsp} +
+
+[role="col-md-6"]
+--
+image:greenmomit_Install_1.png[width=400,role="img-thumbnail"]
+--
+[role="col-md-6 text-justify"]
+--
+Cliquer sur "Général", puis Plugins
+--
+
+[role="row"]
+{nbsp} +
+
+[role="col-md-6"]
+--
+image:greenmomit_Install_2.png[width=400,role="img-thumbnail"]
+--
+[role="col-md-6 text-justify"]
+--
+Cliquer sur l'icône "Market" pour accéder au contenu des plugins disponibles sur le Market Jeedom.
+--
+
+[role="row"]
+{nbsp} +
+
+[role="col-md-6"]
+--
+image:greenmomit_Install_3.png[width=400,role="img-thumbnail"]
+--
+[role="col-md-6 text-justify"]
+--
+Parcourir le market jusqu'à la catégorie "Confort" ou utiliser la zone de recherche avec le mot clé "Green Momit".
+Cliquer sur le plugin.
+--
+
+[role="row"]
+{nbsp} +
+
+[role="col-md-6"]
+--
+image:greenmomit_Install_4.png[width=400,role="img-thumbnail"]
+--
+[role="col-md-6 text-justify"]
+--
+Vous aurez la possibilité d'installer le plugin dans sa version image:commun_1.png[width=25] stable ou image:commun_2.png[width=25] Beta.
+La version stable est recommandée pour la majorité des utilisateurs.
+--
+
+[role="row"]
+{nbsp} +
+
+==== Configuration du plugin
+
+[role="col-md-12 text-justify"]
+--
+Procéder à la configuration du plugin.{nbsp} +
+Vous aurez besoin de vos identifiants qui vous permettent d'accéder au portail Green Momit (https://st.greenmomit.com/)
+{nbsp} +
+Le site du constructeur (http://greenmomit.com/)
+{nbsp} +
+
+Avant de configurer le plugin, vous devez valider que votre compte est fonctionnel sur le portail Green Momit. (https://st.greenmomit.com/)
+{nbsp} +
+image:greenmomit_ST.png[width=400,role="img-thumbnail"]
+
+Et demander au support Green Momit{nbsp} +
+
+* Identifiant unique api
+{nbsp} +
+et{nbsp} +
+* Code secret API
+
+en envoyant un mail à (support@greenmomit.es) ou (support@momit.zendesk.com).
+--
+
+[role="row"]
+{nbsp} +
+
+[role="col-md-12"]
+--
+image:greenmomit_Config_Plugin.png[width=600,role="img-thumbnail"]
+--
+[role="col-md-12 text-justify"]
+--
+image:commun_1.png[width=25] Nom d'utilisateur : spécifier l'adresse email utilisée pour accéder au site https://st.greenmomit.com/
+{nbsp} +
+image:commun_2.png[width=25] Mot de passe : votre mot de passe associé
+{nbsp} +
+image:commun_3.png[width=25] Identifiant unique api : reçu par mail suite à la sollicitation du support Green Momit
+{nbsp} +
+image:commun_4.png[width=25] Code secret API : idem
+{nbsp} +
+* Cliquer ensuite sur "Sauvegarder" et "Synchroniser vos équipements"
+--
+
+[role="row"]
+{nbsp} +
+
+==== Paramétrage du plugin
+
+[role="col-md-12 text-justify"]
+--
+Procéder au paramétrage du plugin
+--
+
+[role="row"]
+{nbsp} +
+
+[role="col-md-6"]
+--
+image:greenmomit_Config_1.png[width=400,role="img-thumbnail"]
+--
+[role="col-md-6 text-justify"]
+--
+Cliquer sur "Plugins" => "Bien-être" => "Green Momit"
+--
+
+[role="col-md-12 text-justify"]
+--
+Votre thermostat est configuré, il ne vous reste plus qu'à :
+
+* Spécifier l'objet parent,
+* l'activer,
+* et le rendre visible.
+
+image:greenmomit_Config_3.png[width=800,role="img-thumbnail"]
+
+L'option : "Le contrôle du thermostat n'est pas fait par Jeedom", permet de laisser l'application Green Momit prioritaire sur Jeedom.
+
+--
+
+==== Configuration du widget
+
+[role="col-md-6"]
+--
+image:greenmomit_Widget_1.png[width=400,role="img-thumbnail"]
+--
+[role="col-md-6 text-justify"]
+--
+Le widget du thermostat est déjà en place et disponible dans l'objet parent définit dans la configuration précédente.
+--
+
+[role="row"]
+{nbsp} +
+[role="col-md-12"]
+--
+image:greenmomit_Widget_2.png[width=600,role="img-thumbnail"]
+--
+[role="col-md-12 text-justify"]
+--
+image:commun_1.png[width=25] Température actuelle (sonde du thermostat).
+{nbsp} +
+image:commun_2.png[width=25] Hydrométrie actuelle (sonde du thermostat).
+{nbsp} +
+image:commun_3.png[width=25] Eteint le thermostat si le thermostat détecte que c'est la nuit.
+{nbsp} +
+image:commun_4.png[width=25] Le thermostat apprend tout seul vos habitudes.
+{nbsp} +
+image:commun_5.png[width=25] Le thermostat s'arrête automatiquement s'il ne détecte pas de présence.
+{nbsp} +
+image:commun_6.png[width=25] Mettre le thermostat en mode Manuel ou Automatique.
+{nbsp} +
+image:commun_7.png[width=25] Etat du thermostat.
+{nbsp} +
+image:commun_8.png[width=25] Consigne du thermostat. Modification de la consigne avec la roue.
+{nbsp} +
+image:commun_9.png[width=25] Rafraîchir l'état. En survolant, affichage de la dernière synchronisation.
+{nbsp} +
+--
+
+
+[role="row"]
+{nbsp} +
